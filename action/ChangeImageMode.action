@@ -1,0 +1,9 @@
+# Request/Goal
+bool grayscale # Request to convert to grayscale (True) or color (False)
+---
+# Result
+bool success    # Result of the operation
+string message  # Message indicating the result
+---
+# Feedback
+float32 progress # Progress percentage
