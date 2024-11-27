@@ -103,14 +103,14 @@ private:
             if (current_mode_) {
                 cv::cvtColor(last_image_, processed_image, cv::COLOR_BGR2GRAY);
                 sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(msg->header, "mono8", processed_image).toImageMsg();      
-                // image_publisher_->publish(*msg);
-                cv::imshow("Camera", processed_image);
-                cv::waitKey(10);
+                image_publisher_->publish(*msg);
+                // cv::imshow("Camera", processed_image);
+                // cv::waitKey(10);
             } else {
                 sensor_msgs::msg::Image::SharedPtr msg = cv_bridge::CvImage(msg->header, "bgr8", last_image_).toImageMsg();      
-                // image_publisher_->publish(*msg);
-                cv::imshow("Camera", last_image_);
-                cv::waitKey(10);
+                image_publisher_->publish(*msg);
+                // cv::imshow("Camera", last_image_);
+                // cv::waitKey(10);
             }
         } catch (const std::exception &e) {
             RCLCPP_ERROR(this->get_logger(), "Image processing failed: %s", e.what());

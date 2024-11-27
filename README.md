@@ -8,3 +8,5 @@
 6. In a new terminal, source ros installtion as done previously. Then use the following two commands to change the mode of the output image - 
     - `ros2 action send_goal /change_image_mode usb_cam_custom/action/ChangeImageMode grayscale:\ true\` to change the image view from RGB to grayscale.
     - `ros2 action send_goal /change_image_mode usb_cam_custom/action/ChangeImageMode grayscale:\ false\` to change the image view from grayscale to RGB.
+
+The output image will be published on the topic `/output_image`. View the topic via RVIZ to verify
