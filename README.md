@@ -10,3 +10,5 @@
     - `ros2 action send_goal /change_image_mode usb_cam_custom/action/ChangeImageMode grayscale:\ false\` to change the image view from grayscale to RGB.
 
 The output image will be published on the topic `/output_image`. View the topic via RVIZ to verify
+
+Conda issue: https://github.com/ros2/examples/issues/303
